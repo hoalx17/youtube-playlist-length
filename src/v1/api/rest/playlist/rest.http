@@ -6,4 +6,4 @@ GET {{HOST}}/health-check/ping
 
 <!-- Playlist Endpoint -->
 ###
-GET {{HOST}}?playlistUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DF4v62q9EAJc%26list%3DPLKvoOwlacRoKgrfQoeroewbhlEOLYYYpi%26index%3D7&speed=4
+GET {{HOST}}?playlistUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DF4v62q9EAJc%26list%3DPLKvoOwlacRoKgrfQoeroewbhlEOLYYfpi%26index%3D7&speed=4&startIndex=2&endIndex=51

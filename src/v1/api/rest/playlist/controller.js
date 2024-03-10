@@ -12,8 +12,12 @@ const { dayStringFromMilliseconds } = require("./util");
 /** Playlist Controller */
 const getPlaylistLengthController = async (req, res, next) => {
   try {
-    const { playlistUrl, speed = 2 } = req.query;
-    const { originIds, uniqueIds, duplicatedIds, totalOriginItemDuration, totalUniqueItemDuration } = await getPlaylistLength(playlistUrl);
+    const { playlistUrl, endIndex, startIndex = 1, speed = 2 } = req.query;
+    const { originIds, uniqueIds, duplicatedIds, totalOriginItemDuration, totalUniqueItemDuration } = await getPlaylistLength(
+      playlistUrl,
+      endIndex,
+      startIndex
+    );
     const payload = {
       length: [originIds.length, uniqueIds.length],
       duplicatedIds,
