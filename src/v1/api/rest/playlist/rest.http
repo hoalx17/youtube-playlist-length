@@ -1,0 +1,9 @@
+@HOST = http://localhost:3000/api/v1/playlist
+@NOW = {{$datetime iso8601}}
+
+###
+GET {{HOST}}/health-check/ping
+
+<!-- Playlist Endpoint -->
+###
+GET {{HOST}}?playlistUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DF4v62q9EAJc%26list%3DPLKvoOwlacRoKgrfQoeroewbhlEOLYYYpi%26index%3D7&speed=4
