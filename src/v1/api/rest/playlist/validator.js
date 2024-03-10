@@ -26,7 +26,7 @@ const numericValidator = function (errMsg, code, msg, ...args) {
   try {
     const isAllNumeric = Object.values(arguments)
       .slice(3)
-      .every((v) => parseInt(v));
+      .every((v) => v === undefined || parseInt(v));
     if (!isAllNumeric) {
       const error = new Error(errMsg);
       ON_RELEASE || console.log(`Validator: ${chalk.red(error.message)}`);

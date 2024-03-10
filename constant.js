@@ -18,5 +18,9 @@ module.exports = {
     /** Route Constant */
     ROUTE_ENDPOINT_ESTABLISHED_SUCCESS: "Route endpoint has been established successfully!",
     ROUTE_ENDPOINT_ESTABLISHED_FAILURE: "Unable to configure route endpoint!",
+
+    /** CLI Constants */
+    CLI_EXECUTION_SUCCESS: "CLI has been executed successfully",
+    CLI_EXECUTION_FAILURE: "Unable to executed CLI",
   },
 };

@@ -80,7 +80,7 @@ const getItemDurations = async (itemIds) => {
 const getPlaylistLength = async (playListURL, endIndex, startIndex = 1) => {
   try {
     const { originIds, uniqueIds } = await getPlaylistItemIds(playListURL, endIndex, startIndex);
-    const uniqueItemDurations = await getItemDurations(uniqueIds.slice(parseInt(startIndex), parseInt(endIndex) + 1));
+    const uniqueItemDurations = await getItemDurations(uniqueIds.slice(parseInt(startIndex) - 1, !endIndex ? endIndex : parseInt(endIndex)));
     if (originIds.length === uniqueIds.length) {
       return {
         originIds,
@@ -92,7 +92,7 @@ const getPlaylistLength = async (playListURL, endIndex, startIndex = 1) => {
         totalUniqueItemDuration: _.sum(uniqueItemDurations),
       };
     } else {
-      const originItemDurations = await getItemDurations(uniqueIds.slice(parseInt(startIndex), parseInt(endIndex) + 1));
+      const originItemDurations = await getItemDurations(originIds.slice(parseInt(startIndex) - 1, !endIndex ? endIndex : parseInt(endIndex)));
       return {
         originIds,
         uniqueIds,

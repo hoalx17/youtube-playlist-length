@@ -19,7 +19,10 @@ const getPlaylistLengthController = async (req, res, next) => {
       startIndex
     );
     const payload = {
-      length: [originIds.length, uniqueIds.length],
+      length: [
+        originIds.slice(parseInt(startIndex) - 1, !endIndex ? endIndex : parseInt(endIndex)).length,
+        uniqueIds.slice(parseInt(startIndex) - 1, !endIndex ? endIndex : parseInt(endIndex)).length,
+      ],
       duplicatedIds,
       unix: [totalOriginItemDuration, totalUniqueItemDuration],
       duration: [
